@@ -44,14 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battle.cs" />
-    <Compile Include="MonsterBase.cs" />
     <Compile Include="PlyaerInfo.cs" />
     <Compile Include="MainPlay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomBuff.cs" />
     <Compile Include="Sene.cs" />
-    <Compile Include="Skeletone.cs" />
-    <Compile Include="Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

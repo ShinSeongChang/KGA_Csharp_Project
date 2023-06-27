@@ -8,21 +8,33 @@ namespace WinterTop
 {
     public class MainPlay
     {
-        Sene draw_Ui = new Sene();
-        PlayerInfo charactor_Info = new PlayerInfo();
+        Sene draw_Ui = new Sene();        
         Battle battle = new Battle();
+        PlayerInfo player = new PlayerInfo();
+        RandomBuff random_Buff = new RandomBuff();
+        
 
         public void Play_Game()
-        {            
+        {
+            int player_Hp = 150;
+            int player_Atk = 15;
+            int critical_damage = player_Atk * 2;
+            int critical_Chance = 5;
+            int heal = 7;
+            int heal_Chance = 20;
+
+            int stage_Count = 0;
+
+            
 
             while (true)
             {
                 draw_Ui.Draw_Sene();
 
                 Console.SetCursorPosition(10, 1);
-                Console.Write("캐릭터 이름 \t 체력 : ");
+                Console.Write("캐릭터 체력 : {0}", player_Hp);
                 Console.SetCursorPosition(90, 1);
-                Console.Write("현재 스테이지 진행정도");
+                Console.Write("스테이지 : {0} / 4", stage_Count);
 
                 Console.SetCursorPosition(55, 5);
                 Console.WriteLine("Main Sene");
@@ -46,22 +58,39 @@ namespace WinterTop
                 
                 ConsoleKeyInfo user_Input = Console.ReadKey();
 
-                switch(user_Input.Key)
+                if(user_Input.Key == ConsoleKey.B)
                 {
-                    case ConsoleKey.I:
-                        charactor_Info.Draw_Info_Window();
-                        charactor_Info.Charactor_Info();
-                        break;
+                    battle.Play_Battle(ref player_Hp,ref player_Atk, ref critical_damage, 
+                        ref critical_Chance, ref heal, ref heal_Chance, ref stage_Count);
 
-                    case ConsoleKey.Escape:
+                    if (player_Hp <= 0)
+                    {
                         return;
+                    }
 
-                    case ConsoleKey.B:
-                        battle.Play_Battle();
-                        break;
+                    stage_Count++;
+                }
+                else if(user_Input.Key == ConsoleKey.I)
+                {
+                    player.Draw_Info_Window();
+                    player.Charactor_Info();
+                }
+                else if(user_Input.Key == ConsoleKey.Escape)
+                {
+                    return;
+                }
+                else if(user_Input.Key == ConsoleKey.D1)
+                {
+                    random_Buff.Select_1(ref player_Atk, ref critical_Chance);
+                }
+                else if (user_Input.Key == ConsoleKey.D2)
+                {
+                    random_Buff.Select_2(ref player_Hp, ref player_Atk, ref critical_Chance);
+                }
+                else if (user_Input.Key == ConsoleKey.D3)
+                {
 
                 }
-
 
 
             }

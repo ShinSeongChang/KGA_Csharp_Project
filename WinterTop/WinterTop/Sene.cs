@@ -102,7 +102,7 @@ namespace WinterTop
 
                     Console.SetCursorPosition(45, 20);
                     Console.WriteLine("게임 입장");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
 
                     init_Game.Play_Game();
                     

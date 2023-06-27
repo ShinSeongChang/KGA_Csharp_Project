@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinterTop
 {
+
     public class PlayerInfo
     {
-        public int playerHp = 100;
-        public int playerAtk = 10;
-
         public void Draw_Info_Window()
         {
             
@@ -84,9 +82,7 @@ namespace WinterTop
             Console.SetCursorPosition(80, 17);
             Console.Write(" 텟 ");
             Console.SetCursorPosition(80, 19);
-            Console.Write(" 창 ");
-            Console.SetCursorPosition(80, 21);
-            Console.Write(" ! ");
+            Console.Write(" 창 ");          
 
             Console.SetCursorPosition(119, 0);
             Console.ReadKey();
