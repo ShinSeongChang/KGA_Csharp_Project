@@ -9,7 +9,7 @@ namespace WinterTop
 {
     public class Battle
     {     
-        Sene draw_Ui = new Sene();
+        Scene draw_Ui = new Scene();
         Random rand = new Random();
         List<string> monster_Name = new List<string>();
         List<int> monster_Hp = new List<int>();
@@ -45,7 +45,7 @@ namespace WinterTop
 
             // 보스 몬스터 조우
             #region
-            if (stage_Count >= 4)
+            if (stage_Count == 4)
             {
                 while (true)
                 {
@@ -55,7 +55,7 @@ namespace WinterTop
                     if (hp <= 0)
                     {
                         draw_Ui.Draw_Sene();
-                        Console.SetCursorPosition(50, 25);
+                        Console.SetCursorPosition(110, 25);
                         Console.WriteLine("전투 패배");
                         Console.ReadLine();
 
@@ -66,7 +66,7 @@ namespace WinterTop
                     else if (Boss_Hp[0] <= 0)
                     {
                         draw_Ui.Draw_Sene();
-                        Console.SetCursorPosition(50, 25);
+                        Console.SetCursorPosition(110, 25);
                         Console.WriteLine("전투 승리");
                         Console.ReadLine();
 
@@ -79,11 +79,11 @@ namespace WinterTop
                     {
                         draw_Ui.Draw_Sene();
 
-                        Console.SetCursorPosition(90, 3);
+                        Console.SetCursorPosition(130, 3);
                         Console.WriteLine("몬스터 이름   : {0}", Boss_Name[0]);
-                        Console.SetCursorPosition(90, 5);
+                        Console.SetCursorPosition(130, 5);
                         Console.WriteLine("몬스터 체력   : {0}", Boss_Hp[0]);
-                        Console.SetCursorPosition(90, 7);
+                        Console.SetCursorPosition(130, 7);
                         Console.WriteLine("몬스터 공격력 :  {0}", Boss_Atk[0]);
 
                         Console.SetCursorPosition(90, 40);
@@ -124,6 +124,8 @@ namespace WinterTop
 
                     battle_count++;
                 }
+
+                return;
             }
             #endregion
             // 보스 몬스터 조우
@@ -138,7 +140,7 @@ namespace WinterTop
                 if (hp <= 0)
                 {
                     draw_Ui.Draw_Sene();
-                    Console.SetCursorPosition(50, 25);
+                    Console.SetCursorPosition(110, 25);
                     Console.WriteLine("전투 패배");
                     Console.ReadLine();
 
@@ -149,7 +151,7 @@ namespace WinterTop
                 else if (monster_Hp[random_Monster] <= 0)
                 {
                     draw_Ui.Draw_Sene();
-                    Console.SetCursorPosition(50, 25);
+                    Console.SetCursorPosition(110, 25);
                     Console.WriteLine("전투 승리");
                     Console.ReadLine();
 
@@ -162,11 +164,11 @@ namespace WinterTop
                 {
                     draw_Ui.Draw_Sene();
 
-                    Console.SetCursorPosition(90, 3);
+                    Console.SetCursorPosition(145, 3);
                     Console.WriteLine("몬스터 이름   : {0}", monster_Name[random_Monster]);
-                    Console.SetCursorPosition(90, 5);
+                    Console.SetCursorPosition(145, 5);
                     Console.WriteLine("몬스터 체력   : {0}", monster_Hp[random_Monster]);
-                    Console.SetCursorPosition(90, 7);
+                    Console.SetCursorPosition(145, 7);
                     Console.WriteLine("몬스터 공격력 :  {0}", monster_Atk[random_Monster]);
 
                     Console.SetCursorPosition(90, 40);
@@ -187,7 +189,7 @@ namespace WinterTop
                            
                             Attack_Monster(ref random_Monster, ref crit, ref hp);
 
-                            Console.SetCursorPosition(50, 25);
+                            Console.SetCursorPosition(110, 25);
                             Console.Write("크리티컬 발생");
                             Console.ReadKey();
 
@@ -219,11 +221,11 @@ namespace WinterTop
             draw_Ui.Draw_Sene();
             monster_Hp[random_Monster] -= atk;
 
-            Console.SetCursorPosition(90, 3);
+            Console.SetCursorPosition(130, 3);
             Console.WriteLine("몬스터 이름   : {0}", monster_Name[random_Monster]);
-            Console.SetCursorPosition(90, 5);
+            Console.SetCursorPosition(130, 5);
             Console.WriteLine("몬스터 체력   : {0}", monster_Hp[random_Monster]);
-            Console.SetCursorPosition(90, 7);
+            Console.SetCursorPosition(130, 7);
             Console.WriteLine("몬스터 공격력 :  {0}", monster_Atk[random_Monster]);
 
             Console.SetCursorPosition(90, 40);
@@ -236,11 +238,11 @@ namespace WinterTop
         {
             hp -= monster_Atk[random_Monster];
 
-            Console.SetCursorPosition(90, 3);
+            Console.SetCursorPosition(130, 3);
             Console.WriteLine("몬스터 이름   : {0}", monster_Name[random_Monster]);
-            Console.SetCursorPosition(90, 5);
+            Console.SetCursorPosition(130, 5);
             Console.WriteLine("몬스터 체력   : {0}", monster_Hp[random_Monster]);
-            Console.SetCursorPosition(90, 7);
+            Console.SetCursorPosition(130, 7);
             Console.WriteLine("몬스터 공격력 :  {0}", monster_Atk[random_Monster]);
 
             Console.SetCursorPosition(90, 40);
@@ -254,11 +256,11 @@ namespace WinterTop
             draw_Ui.Draw_Sene();
             Boss_Hp[0] -= atk;
 
-            Console.SetCursorPosition(90, 3);
+            Console.SetCursorPosition(130, 3);
             Console.WriteLine("몬스터 이름   : {0}", Boss_Name[0]);
-            Console.SetCursorPosition(90, 5);
+            Console.SetCursorPosition(130, 5);
             Console.WriteLine("몬스터 체력   : {0}", Boss_Hp[0]);
-            Console.SetCursorPosition(90, 7);
+            Console.SetCursorPosition(130, 7);
             Console.WriteLine("몬스터 공격력 :  {0}", Boss_Atk[0]);
 
             Console.SetCursorPosition(90, 40);
@@ -271,11 +273,11 @@ namespace WinterTop
         {
             hp -= Boss_Atk[0];
 
-            Console.SetCursorPosition(90, 3);
+            Console.SetCursorPosition(130, 3);
             Console.WriteLine("몬스터 이름   : {0}", Boss_Name[0]);
-            Console.SetCursorPosition(90, 5);
+            Console.SetCursorPosition(130, 5);
             Console.WriteLine("몬스터 체력   : {0}", Boss_Hp[0]);
-            Console.SetCursorPosition(90, 7);
+            Console.SetCursorPosition(130, 7);
             Console.WriteLine("몬스터 공격력 :  {0}", Boss_Atk[0]);
 
             Console.SetCursorPosition(90, 40);

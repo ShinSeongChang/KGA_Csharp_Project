@@ -10,9 +10,9 @@ namespace WinterTop
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(120, 55);
+            Console.SetWindowSize(200, 62);
 
-            Sene draw_Ui = new Sene();
+            Scene draw_Ui = new Scene();
 
             draw_Ui.Draw_Sene();
             draw_Ui.Draw_Title();
