@@ -17,7 +17,6 @@ namespace WinterTop
             draw_Ui.Draw_Sene();
             draw_Ui.Draw_Title();
 
-
         }
     }
 }

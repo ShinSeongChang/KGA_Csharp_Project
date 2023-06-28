@@ -195,15 +195,99 @@ namespace WinterTop
 
                 }
 
-
             }
+
+        }
+
+        public void battle_Info()
+        {
+
+            // 몬스터 창
+            Console.SetCursorPosition(138, 3);
+            Console.Write("┌─────────────────────────────┐");
+            Console.SetCursorPosition(138, 4);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 5);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 6);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 7);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 8);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 9);
+            Console.Write("│                             │");
+            Console.SetCursorPosition(138, 10);
+            Console.Write("└─────────────────────────────┘");
+
+
+
+            // 플레이어 창
+            Console.SetCursorPosition(59, 48);
+            Console.Write("┌───────────────────────────────────────────────────────┐");
+            Console.SetCursorPosition(59, 49);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 50);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 51);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 52);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 53);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 54);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 55);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 56);
+            Console.Write("│                                                       │");
+            Console.SetCursorPosition(59, 57);
+            Console.Write("│                                                       │");            
+            Console.SetCursorPosition(59, 58);
+            Console.Write("└───────────────────────────────────────────────────────┘");
 
 
         }
 
-        public void Battle_Sene()
+        public void main_info()
         {
-            Draw_Sene();
+            Console.SetCursorPosition(59, 42);
+            Console.Write("================================================================================================================");
+            Console.SetCursorPosition(59, 43);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 44);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 45);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 46);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 47);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 48);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 49);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 50);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 51);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 52);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 53);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 54);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 55);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 56);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 57);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 58);
+            Console.Write("                                                                           │                                    ");
+            Console.SetCursorPosition(59, 59);
+            Console.Write("                                                                           │                                    ");
+
         }
 
     }
