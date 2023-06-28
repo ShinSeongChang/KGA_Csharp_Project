@@ -12,10 +12,24 @@ namespace WinterTop
         public void Draw_Info_Window()
         {
             
-            Console.SetCursorPosition(75, 10);
+            Console.SetCursorPosition(75, 3);
             Console.WriteLine("┌───────────────────────────────────────────────────────────────────────────┐");
-            Console.SetCursorPosition(75, 11);
+            Console.SetCursorPosition(75, 4);
             Console.WriteLine("│  ┌──────────────────────────────────────────┐                             │");
+            Console.SetCursorPosition(75, 5);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 6);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 7);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 8);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 9);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 10);
+            Console.WriteLine("│  │                                          │                             │");
+            Console.SetCursorPosition(75, 11);
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 12);
             Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 13);
@@ -55,17 +69,17 @@ namespace WinterTop
             Console.SetCursorPosition(75, 30);
             Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 31);
-            Console.WriteLine("│  └──────────────────────────────────────────┘                             │");
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 32);
-            Console.WriteLine("│                                                                           │");
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 33);
-            Console.WriteLine("│                                                                           │");
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 34);
-            Console.WriteLine("│                                                                           │");
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 35);
-            Console.WriteLine("│                                                                           │");
+            Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 36);
-            Console.WriteLine("│                                                                           │");
+            Console.WriteLine("│  └──────────────────────────────────────────┘                             │");
             Console.SetCursorPosition(75, 37);
             Console.WriteLine("└───────────────────────────────────────────────────────────────────────────┘");            
             
@@ -73,17 +87,19 @@ namespace WinterTop
 
         public void Charactor_Info(ref double hp, ref double max_hp, ref double atk, ref int cri, ref int evasion)
         {
-            Console.SetCursorPosition(125, 11);
+            Console.SetCursorPosition(130, 5);
+            Console.Write(" < 능 력 치 >");
+            Console.SetCursorPosition(125, 8);
             Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-            Console.SetCursorPosition(125, 13);
+            Console.SetCursorPosition(125, 10);
             Console.Write(" 공격력 : {0}", atk);
-            Console.SetCursorPosition(125, 15);
+            Console.SetCursorPosition(125, 12);
             Console.Write(" 회피율 : {0} %", evasion);
-            Console.SetCursorPosition(125, 17);
+            Console.SetCursorPosition(125, 14);
             Console.Write(" 크리티컬 확률 : {0} % ", cri);
-            Console.SetCursorPosition(79, 32);
-            Console.Write("<스킬 슬롯>");
-            Console.SetCursorPosition(79, 34);
+            Console.SetCursorPosition(130, 18);
+            Console.Write("< 스 킬 슬 롯 >");
+            Console.SetCursorPosition(129, 20);
             Console.Write("(비어 있음)");
 
             Console.SetCursorPosition(119, 0);

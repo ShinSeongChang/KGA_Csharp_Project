@@ -25,7 +25,7 @@ namespace WinterTop
         List<double> Boss_Atk = new List<double>();
 
         public void Play_Battle(ref double hp, ref double max_hp, ref double atk, ref double crit,
-            ref int cri_chance, ref int evasion, ref int stage_Count, ref int last_stage)
+            ref int cri_chance, ref int evasion, ref int stage_Count, ref int last_stage, ref int boss_Count)
         {
             
             monster_Name.Add("좀비");
@@ -80,6 +80,7 @@ namespace WinterTop
                         Console.WriteLine("전투 승리");
                         Console.ReadLine();
                         
+                        boss_Count++;
                         break;
                     }
                     // 배틀 탈출조건
@@ -142,7 +143,6 @@ namespace WinterTop
                     battle_count++;
                 }
 
-                stage_Count++;
                 return;
             }
             #endregion

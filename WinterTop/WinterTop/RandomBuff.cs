@@ -18,6 +18,7 @@ namespace WinterTop
             ref double hp)  
         {
             draw_Ui.Draw_Sene();
+            draw_Ui.main_info();
             double random_Atk = random.NextDouble();
             int random_Cri = random.Next(0, 4);             // 크리티컬 증가량 0 ~ 3 %
             int random_Evasion = random.Next(0, 3);         // 회피율 증가량 0 ~ 2 %
@@ -39,9 +40,9 @@ namespace WinterTop
             {
                 double save_Atk = Math.Truncate(atk * random_Atk);
 
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 54);
                 Console.Write("공격력 증가량 : {0} %", Math.Truncate(random_Atk * 100));
-                Console.SetCursorPosition(105, 30);
+                Console.SetCursorPosition(70, 56);
                 Console.Write("공격력 증가 : {0} + {1}", atk, save_Atk);
 
                 atk += save_Atk;
@@ -49,14 +50,14 @@ namespace WinterTop
             }
             else if(random_Buff == 1)                       // 크리티컬 확률 증가일 경우
             {
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 54);
                 Console.Write("크리티컬 확률 증가 : {0} % + {1} %", crichance, random_Cri);
                 crichance += random_Cri;
                 
             }
             else if (random_Buff == 2)                      // 회피율 증가일 경우
             {
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 54);
                 Console.Write("회피율 증가 : {0} % + {1} %", evasion, random_Evasion);
                 evasion += random_Evasion;
 
@@ -65,9 +66,9 @@ namespace WinterTop
             {
                 double save_Hp = Math.Truncate(max_Hp * random_Max_Hp);
 
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 54);
                 Console.WriteLine("최대체력 증가량 :  {0} %", Math.Truncate(random_Max_Hp * 100));
-                Console.SetCursorPosition(105, 30);
+                Console.SetCursorPosition(70, 56);
                 Console.Write("최대체력 증가 : {0} + {1}", max_Hp, save_Hp);
 
                 max_Hp += save_Hp;
@@ -92,6 +93,7 @@ namespace WinterTop
         public void Select_2(ref double hp, ref double atk, ref int crichance, ref int evasion)            
         {
             draw_Ui.Draw_Sene();
+            draw_Ui.main_info();
 
             double random_Hp = random.NextDouble();
             double random_Atk = random.NextDouble();
@@ -115,13 +117,13 @@ namespace WinterTop
                 double save_Hp = Math.Truncate(hp * random_Hp);
                 double save_Atk = Math.Truncate(atk * random_Atk);
 
-                Console.SetCursorPosition(105, 24);
+                Console.SetCursorPosition(70, 50);
                 Console.WriteLine("체력 감소량 :  {0} %", Math.Truncate(random_Hp * 100));
-                Console.SetCursorPosition(105, 26);
+                Console.SetCursorPosition(70, 52);
                 Console.WriteLine("체력 감소 : {0} - {1}", hp, save_Hp);
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 54);
                 Console.Write("공격력 증가량 : {0} %", atk, Math.Truncate(random_Atk * 100));
-                Console.SetCursorPosition(105, 30);
+                Console.SetCursorPosition(70, 56);
                 Console.Write("공격력 증가 : {0} + {1}", atk, save_Atk);
 
                 atk += save_Atk;
@@ -131,11 +133,11 @@ namespace WinterTop
             {
                 double save_Hp = Math.Truncate(hp * random_Hp);
 
-                Console.SetCursorPosition(105, 24);
+                Console.SetCursorPosition(70, 52);
                 Console.WriteLine("체력 감소량 :  {0} %", Math.Truncate(random_Hp * 100));
-                Console.SetCursorPosition(105, 26);
+                Console.SetCursorPosition(70, 54);
                 Console.WriteLine("체력 감소 : {0} - {1}", hp, save_Hp);
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 56);
                 Console.Write("크리티컬 확률 증가 : {0}% + {1}%", crichance, random_Cri);
                 crichance += random_Cri;
                 hp -= save_Hp;
@@ -144,11 +146,11 @@ namespace WinterTop
             {
                 double save_Hp = Math.Truncate(hp * random_Hp);
 
-                Console.SetCursorPosition(105, 24);
+                Console.SetCursorPosition(70, 52);
                 Console.WriteLine("체력 감소량 :  {0} %", Math.Truncate(random_Hp * 100));
-                Console.SetCursorPosition(105, 26);
+                Console.SetCursorPosition(70, 54);
                 Console.WriteLine("체력 감소 : {0} - {1}", hp, save_Hp);
-                Console.SetCursorPosition(105, 28);
+                Console.SetCursorPosition(70, 56);
                 Console.Write("회피율 증가 : {0}% + {1}%", evasion, random_Evasion);
                 evasion += random_Evasion;
                 hp -= save_Hp;
@@ -164,6 +166,8 @@ namespace WinterTop
         {
 
             draw_Ui.Draw_Sene();
+            draw_Ui.main_info();
+            //draw_Ui.Draw_Heal();
 
             double random_Hp = random.NextDouble();
 
@@ -172,11 +176,11 @@ namespace WinterTop
                 random_Hp = random.NextDouble();
             }
 
-            double save_Hp = Math.Truncate(hp * random_Hp);
+            double save_Hp = Math.Truncate(max_hp * random_Hp);
 
-            Console.SetCursorPosition(105, 24);
+            Console.SetCursorPosition(70, 54);
             Console.WriteLine("체력 회복량 : {0} %", Math.Truncate(random_Hp * 100));
-            Console.SetCursorPosition(105, 26);
+            Console.SetCursorPosition(70, 56);
             Console.WriteLine("체력 회복 : {0} + {1}", hp, save_Hp);
 
             hp += save_Hp;

@@ -9,7 +9,121 @@ namespace WinterTop
 {
     public class Scene
     {
-        
+        public void Darw_Background()
+        {
+            Console.SetCursorPosition(165, 3);
+            Console.Write("...........     -!,                        ");
+            Console.SetCursorPosition(165, 4);
+            Console.Write("...........    ;@@~                        ");
+            Console.SetCursorPosition(165, 5);
+            Console.Write("...........  .=@@@!                        ");
+            Console.SetCursorPosition(165, 6);
+            Console.Write("........... .*#@#!$                        ");
+            Console.SetCursorPosition(165, 7);
+            Console.Write("............!$$@@=$                        ");
+            Console.SetCursorPosition(165, 8);
+            Console.Write(".......,,,.-@@$$@$$.                       ");
+            Console.SetCursorPosition(165, 9);
+            Console.Write(".....,,,,,,$#####$$,                       ");
+            Console.SetCursorPosition(165, 10);
+            Console.Write("....,,,---:@@#!!=@@-                       ");
+            Console.SetCursorPosition(165, 11);
+            Console.Write("....,,----#@@@#@$@=                        ");
+            Console.SetCursorPosition(165, 12);
+            Console.Write("...,,,--~~@@$$@@$$=                        ");
+            Console.SetCursorPosition(165, 13);
+            Console.Write("...,,--~:=@@#@@$@$                         ");
+            Console.SetCursorPosition(165, 14);
+            Console.Write("...,,-~~:#@@$@=@@#                         ");
+            Console.SetCursorPosition(165, 15);
+            Console.Write("..,,--~:;@@@@$@#@*                         ");
+            Console.SetCursorPosition(165, 16);
+            Console.Write("..,,--~~:@@@$@#@@@*                        ");
+            Console.SetCursorPosition(165, 17);
+            Console.Write(".,,,---~~@@@##@@@@$,                       ");
+            Console.SetCursorPosition(165, 18);
+            Console.Write(",,,------~@@@@#@=**~;*!:~                  ");
+            Console.SetCursorPosition(165, 19);
+            Console.Write(",,,----,,.==@@$@#@#*;;;;;;-.               ");
+            Console.SetCursorPosition(165, 20);
+            Console.Write(",,,---,,... =@#$====*;;;;;!;,              ");
+            Console.SetCursorPosition(165, 21);
+            Console.Write(",,,-,,,...  ~$=***!!;;:::;;!;~             ");
+            Console.SetCursorPosition(165, 22);
+            Console.Write(",,,,,,,. ..,==**!!!!;;::::;;;;:            ");
+            Console.SetCursorPosition(165, 23);
+            Console.Write(",,,,,,,...,*=**!!!;;;;;;:::;;;;~           ");
+            Console.SetCursorPosition(165, 24);
+            Console.Write(",,,,......!**!!!;;;;;;;;;;;;;;***,         ");
+            Console.SetCursorPosition(165, 25);
+            Console.Write(",,,......:**!!!;;;;;;;;;!;:~-:$=*!~        ");
+            Console.SetCursorPosition(165, 26);
+            Console.Write(",........***!!;;;;;::;;;:::~-:=$=$!.       ");
+            Console.SetCursorPosition(165, 27);
+            Console.Write("........!=*!!!;;;;:::;;::::::~$#@@=.       ");
+            Console.SetCursorPosition(165, 28);
+            Console.Write("...,,,..***!;!;;;;:;;;:::::-,-~=*@$;,      ");
+            Console.SetCursorPosition(165, 29);
+            Console.Write("..,,,,.:=*!!!!;;;;;!;;;::::-,,-$#=#=,.     ");
+            Console.SetCursorPosition(165, 30);
+            Console.Write(",,,,,,,!=**!!!;;;;;;;::;;;:~---,#@*$!-     ");
+            Console.SetCursorPosition(165, 31);
+            Console.Write(",,,,,,-*==*!!!;;;;;;;:::-:!-~~-:!!;~,.     ");
+            Console.SetCursorPosition(165, 32);
+            Console.Write(",,,,,,~==*!*!;;;;;:::::;;~;::;~-,.. ,. -;  ");
+            Console.SetCursorPosition(165, 33);
+            Console.Write("..,,,,:=***!!;;;;!::~-::!:-,,,,.. . ,. -*  ");
+            Console.SetCursorPosition(165, 34);
+            Console.Write(".,,,,,!**=!!!!;;*!:::;;-.~!!;;!;:::; .. !  ");
+            Console.SetCursorPosition(165, 35);
+            Console.Write("..,,,,!*=!=***!!*!*!!!;;;!!!!!;:::::*.. -  ");
+            Console.SetCursorPosition(165, 36);
+            Console.Write("...,,,!*!**=*;!**!*=*!!;;!!!:-~   ;::,...$ ");
+            Console.SetCursorPosition(165, 37);
+            Console.Write("...,,-!***;=;~~*!*=$=*;~~         *:~:,.,; ");
+            Console.SetCursorPosition(165, 38);
+            Console.Write("...,,-!**=$*;,$;:@!$!,.           .::;=-~; ");
+            Console.SetCursorPosition(165, 39);
+            Console.Write(" ...,,;$@$$,-!-#$#~@*!:~-,.  .-::-~:~;!-!! ");
+            Console.SetCursorPosition(165, 40);
+            Console.Write("  ..,,~:=*;$-=!=*~=#@=!!;;;!==**;--~~~:--; ");
+            Console.SetCursorPosition(165, 41);
+            Console.Write("   .,-~!$!:!-;~!=*==#*!!!;!*==**;-~~~~~-,:.");
+            Console.SetCursorPosition(165, 42);
+            Console.Write("   ..,~!$~~:;**$@@@!#$;!!!!*=*=*!~~~:~~-,--");
+            Console.SetCursorPosition(165, 43);
+            Console.Write("  ....,~*;$=$$#=*!#$#$;;!==***==*!~~~~~----");
+            Console.SetCursorPosition(165, 44);
+            Console.Write(" ...,,,,-*$;!$*:~==@@#;!!====*=**!~~~~~~---");
+            Console.SetCursorPosition(165, 45);
+            Console.Write("   ..,,,,;!===!*#$*=#@$:!*===*=**;~::::~--.");
+            Console.SetCursorPosition(165, 46);
+            Console.Write("     .,,-~::-;-;###=*$@;;!===*==*~:;;;;~~- ");
+            Console.SetCursorPosition(165, 47);
+            Console.Write("      .,-~;:-~-:$$$#$*=!;!*==*===~;;;;;~~- ");
+            Console.SetCursorPosition(165, 48);
+            Console.Write("      ..-~::-~--$=$$$$$=;!**====*;;!!;;:~~ ");
+            Console.SetCursorPosition(165, 49);
+            Console.Write("       ..-!:!$~;==*====#;!!*=$==*!;;!:;:~~ ");
+            Console.SetCursorPosition(165, 50);
+            Console.Write("        .,:!~#**!!!!****;;!*===*!!;;;;!:-- ");
+            Console.SetCursorPosition(165, 51);
+            Console.Write("          ,;!##!;:::;!!**;!!!**!!;:;;:$!:: ");
+            Console.SetCursorPosition(165, 52);
+            Console.Write("           .:!:~~----~;!!!!!!!;;;;:;;;#=*! ");
+            Console.SetCursorPosition(165, 53);
+            Console.Write("              .......,-:;!!!!!;;;;;;;:#**, ");
+            Console.SetCursorPosition(165, 54);
+            Console.Write("                     ..,-:;!!!!;;;;=;;#$!  ");
+            Console.SetCursorPosition(165, 55);
+            Console.Write("                         .,~;!*!;;;;=~#*.  ");
+            Console.SetCursorPosition(165, 56);
+            Console.Write("                            .-:;!**;;;!;   ");
+            Console.SetCursorPosition(165, 57);
+            Console.Write("                               ..,-,,,.    ");
+
+        }
+
         public void Draw_Sene()
         {
             Console.SetCursorPosition(55, 0);
@@ -287,6 +401,79 @@ namespace WinterTop
             Console.Write("                                                                           │                                    ");
             Console.SetCursorPosition(59, 59);
             Console.Write("                                                                           │                                    ");
+
+        }
+
+        public void Draw_Heal()
+        {
+            Console.SetCursorPosition(95, 5);
+            Console.WriteLine("              $       @##@@                       ");
+            Console.SetCursorPosition(95, 6);
+            Console.WriteLine("              $$      @$!@@@                      ");
+            Console.SetCursorPosition(95, 7);
+            Console.WriteLine("               $      @@,$@@            $         ");
+            Console.SetCursorPosition(95, 8);
+            Console.WriteLine("                     @@ :@@           $$          ");
+            Console.SetCursorPosition(95, 9);
+            Console.WriteLine("                     @@.~@@@          $$          ");
+            Console.SetCursorPosition(95, 10);
+            Console.WriteLine("        $             @@,,$@@         $$          ");
+            Console.SetCursorPosition(95, 11);
+            Console.WriteLine("        $$            @@@. *@@        $$          ");
+            Console.SetCursorPosition(95, 12);
+            Console.WriteLine("         $           @@@; *@@                     ");
+            Console.SetCursorPosition(95, 13);
+            Console.WriteLine("                   @@@#* !@@@                     ");
+            Console.SetCursorPosition(95, 14);
+            Console.WriteLine("                   @@@@= -#@@                     ");
+            Console.SetCursorPosition(95, 15);
+            Console.WriteLine("                    @@@* ,@@@                     ");
+            Console.SetCursorPosition(95, 16);
+            Console.WriteLine("                    @@=,  #@@                     ");
+            Console.SetCursorPosition(95, 17);
+            Console.WriteLine("                  @@@#:   *@@@@@@@                ");
+            Console.SetCursorPosition(95, 18);
+            Console.WriteLine("            @@@@@@@#*--   .=@!##;#@               ");
+            Console.SetCursorPosition(95, 19);
+            Console.WriteLine("           @@@-,;@@#~      ,;-==.;@@              ");
+            Console.SetCursorPosition(95, 20);
+            Console.WriteLine("          @@@$, ,;$*~       ~=$:-!@@@             ");
+            Console.SetCursorPosition(95, 21);
+            Console.WriteLine("          @@#~,..-~         .:=$!~=@@          $  ");
+            Console.SetCursorPosition(95, 22);
+            Console.WriteLine("          @@$,... .         .,!#@$:@          $$  ");
+            Console.SetCursorPosition(95, 23);
+            Console.WriteLine("           @#~.  ..         .,:$*@@          $$   ");
+            Console.SetCursorPosition(95, 24);
+            Console.WriteLine("         @@@@;...           .:#;*$@@        $$    ");
+            Console.SetCursorPosition(95, 25);
+            Console.WriteLine("         @@@#*~-,            .$$:*#@@             ");
+            Console.SetCursorPosition(95, 26);
+            Console.WriteLine("        @@@@=#*.         .  . *@!.=#@@@           ");
+            Console.SetCursorPosition(95, 27);
+            Console.WriteLine("       @@@@@*:.     .         ~=@: .*@@@          ");
+            Console.SetCursorPosition(95, 28);
+            Console.WriteLine("  @@@@@@=$$!:.     ..     ,  .,;@@*.;=@@          ");
+            Console.SetCursorPosition(95, 29);
+            Console.WriteLine("#@@#@@@@#@$===*!:~-:~,   ~:  ,=-=@@~;*#@          ");
+            Console.SetCursorPosition(95, 30);
+            Console.WriteLine("*@@@@@@@@@@@@@#=!*;~~-  -#..  ,;:@@#$@@@@         ");
+            Console.SetCursorPosition(95, 31);
+            Console.WriteLine("$@@@@@$$@@$; ,,$!~,.=~ -!: . !;*;#@#**@@@@@       ");
+            Console.SetCursorPosition(95, 32);
+            Console.WriteLine("###@@@!~#@**-.:@,-,-$=!#$;.:.;:$;$@@#@@@#$@@@     ");
+            Console.SetCursorPosition(95, 33);
+            Console.WriteLine(" @@@@@@##@@#*~--,, ,##@#,!:#:;!#$$@@@@@@@#!@@     ");
+            Console.SetCursorPosition(95, 34);
+            Console.WriteLine(" @@@#@@@@@@@@#!;,.~,@@@~,==#:~#@=*@@@@@@@!*=@     ");
+            Console.SetCursorPosition(95, 35);
+            Console.WriteLine("   @@@@@@@@@@@#$;!~!@@;##@@$;!=@*~@@@@@@@@$@@     ");
+            Console.SetCursorPosition(95, 36);
+            Console.WriteLine("   @@@@@@@@@@@@@**=@@@#@@@@@***#$*$@@@@@@@@@@@    ");
+            Console.SetCursorPosition(95, 37);
+            Console.WriteLine("    @@##$#@@$@@~::;##@@@@@@@$!:!$@@@@@@@@@@@@@@@  ");
+            Console.SetCursorPosition(95, 38);
+            Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@##@@@@@@@@@@@@@@@@@@@@@@@@@ ");
 
         }
 
