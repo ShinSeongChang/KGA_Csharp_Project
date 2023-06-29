@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,9 @@ namespace WinterTop
 
     public class PlayerInfo
     {
+        List<string> skil_Name = new List<string>();
+        List<int> skil_Value = new List<int>();
+
         public void Draw_Info_Window()
         {
             
@@ -85,25 +89,53 @@ namespace WinterTop
             
         }
 
-        public void Charactor_Info(ref double hp, ref double max_hp, ref double atk, ref int cri, ref int evasion)
+        public void Charactor_Info(ref double hp, ref double max_hp, ref double atk, ref int cri, ref int evasion, ref int stage_Count)
         {
-            Console.SetCursorPosition(130, 5);
-            Console.Write(" < 능 력 치 >");
-            Console.SetCursorPosition(125, 8);
-            Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-            Console.SetCursorPosition(125, 10);
-            Console.Write(" 공격력 : {0}", atk);
-            Console.SetCursorPosition(125, 12);
-            Console.Write(" 회피율 : {0} %", evasion);
-            Console.SetCursorPosition(125, 14);
-            Console.Write(" 크리티컬 확률 : {0} % ", cri);
-            Console.SetCursorPosition(130, 18);
-            Console.Write("< 스 킬 슬 롯 >");
-            Console.SetCursorPosition(129, 20);
-            Console.Write("(비어 있음)");
+            skil_Name.Add("(비 어 있 음)");
+            skil_Value.Add(0);
 
-            Console.SetCursorPosition(119, 0);
-            Console.ReadKey();
+            if (stage_Count < 2)
+            {
+                Console.SetCursorPosition(130, 5);
+                Console.Write(" < 능 력 치 >");
+                Console.SetCursorPosition(125, 8);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
+                Console.SetCursorPosition(125, 10);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 12);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 14);
+                Console.Write(" 크리티컬 확률 : {0} % ", cri);
+                Console.SetCursorPosition(130, 18);
+                Console.Write("< 스 킬 슬 롯 >");
+                Console.SetCursorPosition(129, 20);
+                Console.Write("( 비 어 있 음 )");
+
+                Console.SetCursorPosition(119, 0);
+                Console.ReadKey();
+            }
+            else if(stage_Count >= 2)
+            {
+
+                Console.SetCursorPosition(130, 5);
+                Console.Write(" < 능 력 치 >");
+                Console.SetCursorPosition(125, 8);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
+                Console.SetCursorPosition(125, 10);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 12);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 14);
+                Console.Write(" 크리티컬 확률 : {0} % ", cri);
+                Console.SetCursorPosition(130, 18);
+                Console.Write("< 스 킬 슬 롯 >");
+                Console.SetCursorPosition(129, 20);
+                Console.Write("{0}", skil_Name[1]);
+
+
+                Console.SetCursorPosition(119, 0);
+                Console.ReadKey();
+            }
         }
 
     }

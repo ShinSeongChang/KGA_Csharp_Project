@@ -10,14 +10,12 @@ namespace WinterTop
     {
         Random random = new Random();
         Scene draw_Ui = new Scene();
-        List<string> skil_Name = new List<string>();
-        List<int> skil_value = new List<int>();
 
         // 분기점 1을 선택했을 경우
         public void Select_1(ref double atk, ref int crichance, ref int evasion, ref double max_Hp,
             ref double hp)  
         {
-            draw_Ui.Draw_Sene();
+            draw_Ui.Draw_Scene();
             draw_Ui.main_info();
             double random_Atk = random.NextDouble();
             int random_Cri = random.Next(0, 4);             // 크리티컬 증가량 0 ~ 3 %
@@ -92,7 +90,7 @@ namespace WinterTop
         // 분기점 2를 선택했을 경우
         public void Select_2(ref double hp, ref double atk, ref int crichance, ref int evasion)            
         {
-            draw_Ui.Draw_Sene();
+            draw_Ui.Draw_Scene();
             draw_Ui.main_info();
 
             double random_Hp = random.NextDouble();
@@ -164,8 +162,7 @@ namespace WinterTop
         // 분기점 3을 선택했을 경우
         public void Select_3(ref double hp, ref double max_hp)
         {
-
-            draw_Ui.Draw_Sene();
+            draw_Ui.Draw_Scene();
             draw_Ui.main_info();
             //draw_Ui.Draw_Heal();
 

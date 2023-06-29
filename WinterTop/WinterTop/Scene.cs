@@ -124,7 +124,7 @@ namespace WinterTop
 
         }
 
-        public void Draw_Sene()
+        public void Draw_Scene()
         {
             Console.SetCursorPosition(55, 0);
             Console.WriteLine("┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐");
@@ -272,7 +272,7 @@ namespace WinterTop
 
                 if(game_Init.Key == ConsoleKey.Escape)
                 {
-                    Draw_Sene();
+                    Draw_Scene();
 
                     Console.SetCursorPosition(100, 25);                    
                     Console.WriteLine("게임을 종료합니다...");
@@ -282,7 +282,7 @@ namespace WinterTop
                 }
                 else if (game_Init.Key == ConsoleKey.Enter)
                 {
-                    Draw_Sene();
+                    Draw_Scene();
 
                     Console.SetCursorPosition(100, 25);
                     Console.WriteLine("게임 입장");
@@ -291,14 +291,14 @@ namespace WinterTop
                     init_Game.Play_Game();
                     
                     // 메인 플레이중 게임종료를 눌렀을시
-                    draw_Ui.Draw_Sene();
+                    draw_Ui.Draw_Scene();
                     draw_Ui.Draw_Title();
                     return;
                     // 메인 플레이중 게임종료를 눌렀을시
                 }
                 else
                 {
-                    Draw_Sene();
+                    Draw_Scene();
 
                     Console.SetCursorPosition(100, 27);
                     Console.Write("키 입력이 올바르지 않습니다.");
@@ -313,7 +313,7 @@ namespace WinterTop
 
         }
 
-        public void battle_Info()
+        public void Draw_InfoWindow()
         {
 
             // 몬스터 창

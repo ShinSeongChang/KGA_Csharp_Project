@@ -15,7 +15,7 @@ namespace WinterTop
             Scene draw_Ui = new Scene();
 
             //draw_Ui.Darw_Background();
-            draw_Ui.Draw_Sene();            
+            draw_Ui.Draw_Scene();            
             draw_Ui.Draw_Title();
 
         }

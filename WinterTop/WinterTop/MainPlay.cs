@@ -12,13 +12,12 @@ namespace WinterTop
         Battle battle = new Battle();
         PlayerInfo player = new PlayerInfo();
         RandomBuff random_Buff = new RandomBuff();
-        
 
         public void Play_Game()
         {
             double player_Hp = 150;
             double player_Max_Hp = 150;
-            double player_Atk = 15;
+            double player_Atk = 500;
             double critical_damage = player_Atk * 1.5;
             int critical_Chance = 5;
             int evasion_Chance = 3;
@@ -33,7 +32,7 @@ namespace WinterTop
 
             while (true)
             {
-                draw_Ui.Draw_Sene();
+                draw_Ui.Draw_Scene();
                 draw_Ui.main_info();
 
 
@@ -71,7 +70,7 @@ namespace WinterTop
                 {
                     player.Draw_Info_Window();
                     player.Charactor_Info(ref player_Hp, ref player_Max_Hp, ref player_Atk,
-                        ref critical_Chance, ref evasion_Chance);
+                        ref critical_Chance, ref evasion_Chance, ref stage_Count);
                 }
                 else if(user_Input.Key == ConsoleKey.Escape)    // 게임 종료
                 {
@@ -125,7 +124,7 @@ namespace WinterTop
                 else if (user_Input.Key == ConsoleKey.D3)
                 {
                     random_Buff.Select_3(ref player_Hp, ref player_Max_Hp);
-
+                    
                     battle.Play_Battle(ref player_Hp, ref player_Max_Hp, ref player_Atk, ref critical_damage,
                         ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count);
 
