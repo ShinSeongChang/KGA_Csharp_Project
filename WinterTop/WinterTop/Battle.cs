@@ -80,11 +80,11 @@ namespace WinterTop
             // 스테이지 2단계 진행시마다 유저는 순차적으로 스킬을 획득
 
 
-            int random_Monster = rand.Next(0, (monster_Name.Count-2));   
+            int random_Monster = rand.Next(0, 3);   
             
             if(stage_Count >= last_stage)
             {
-                random_Monster = monster_Name.Count - 1;
+                random_Monster = 3;
             }
 
             int battle_count = 0;
@@ -114,7 +114,7 @@ namespace WinterTop
                         break;
 
                     }
-                    else if (monster_Hp[monster_Hp.Count - 1] <= 0)       // 몬스터 사망시
+                    else if (monster_Hp[3] <= 0)       // 몬스터 사망시
                     {
                         draw_Ui.Draw_Scene();
                         Console.SetCursorPosition(110, 25);
@@ -146,6 +146,8 @@ namespace WinterTop
                             case ConsoleKey.I:
                                 player.Draw_Info_Window();
                                 player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                draw_Ui.Draw_Player();
+                                Console.ReadKey();
 
                                 break;
                             case ConsoleKey.UpArrow:
@@ -206,6 +208,8 @@ namespace WinterTop
                                     case ConsoleKey.I:
                                         player.Draw_Info_Window();
                                         player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                        //draw_Ui.Draw_Player();
+                                        Console.ReadKey();
 
                                         break;
                                     case ConsoleKey.UpArrow:
@@ -310,6 +314,21 @@ namespace WinterTop
                     {
                         draw_Ui.Draw_Scene();
                         draw_Ui.Draw_InfoWindow();
+                        //draw_Ui.Draw_BattlePlyaer();
+
+                        //if (random_Monster == 0)
+                        //{
+                        //    draw_Ui.Draw_Zombie();
+                        //}
+                        //else if (random_Monster == 1)
+                        //{
+                        //    draw_Ui.Draw_Skeleton();
+                        //}
+                        //else if (random_Monster == 2)
+                        //{
+                        //    draw_Ui.Draw_Fanatic();
+                        //}
+
                         Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
                         Draw_BattleInfo(ref hp, ref max_hp, ref atk, ref random_Monster);
 
@@ -324,6 +343,8 @@ namespace WinterTop
                             case ConsoleKey.I:
                                 player.Draw_Info_Window();
                                 player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                draw_Ui.Draw_Player();
+                                Console.ReadKey();
 
                                 break;
                             case ConsoleKey.UpArrow:
@@ -386,6 +407,8 @@ namespace WinterTop
                                     case ConsoleKey.I:
                                         player.Draw_Info_Window();
                                         player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                        draw_Ui.Draw_Player();
+                                        Console.ReadKey();
 
                                         break;
                                     case ConsoleKey.UpArrow:

@@ -71,6 +71,9 @@ namespace WinterTop
                     player.Draw_Info_Window();
                     player.Charactor_Info(ref player_Hp, ref player_Max_Hp, ref player_Atk,
                         ref critical_Chance, ref evasion_Chance, ref stage_Count);
+                    draw_Ui.Draw_Player();
+
+                    Console.ReadKey();
                 }
                 else if(user_Input.Key == ConsoleKey.Escape)    // 게임 종료
                 {

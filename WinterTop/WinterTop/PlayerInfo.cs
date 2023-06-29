@@ -10,8 +10,13 @@ namespace WinterTop
 
     public class PlayerInfo
     {
-        List<string> skil_Name = new List<string>();
-        List<int> skil_Value = new List<int>();
+        List<string> skillist_Name = new List<string>();
+        List<int> skillist_Count = new List<int>();
+        List<int> skillist_MaxCount = new List<int>();
+
+        List<string> user_Skilname = new List<string>();
+        List<int> user_SkilCount = new List<int>();
+        List<int> user_MaxSkilCount = new List<int>();
 
         public void Draw_Info_Window()
         {
@@ -91,8 +96,26 @@ namespace WinterTop
 
         public void Charactor_Info(ref double hp, ref double max_hp, ref double atk, ref int cri, ref int evasion, ref int stage_Count)
         {
-            skil_Name.Add("(비 어 있 음)");
-            skil_Value.Add(0);
+            skillist_Name.Add("스킬1");
+            skillist_Count.Add(5);
+            skillist_MaxCount.Add(5);
+            skillist_Name.Add("스킬2");
+            skillist_Count.Add(3);
+            skillist_MaxCount.Add(3);
+            skillist_Name.Add("스킬3");
+            skillist_Count.Add(1);
+            skillist_MaxCount.Add(1);
+
+            int skil_Addcount = 0;
+
+            if (stage_Count % 2 == 0)
+            {
+                user_Skilname.Add(skillist_Name[skil_Addcount]);
+                user_SkilCount.Add(skillist_Count[skil_Addcount]);
+                user_MaxSkilCount.Add(skillist_MaxCount[skil_Addcount]);
+
+                skil_Addcount++;
+            }
 
             if (stage_Count < 2)
             {
@@ -110,9 +133,6 @@ namespace WinterTop
                 Console.Write("< 스 킬 슬 롯 >");
                 Console.SetCursorPosition(129, 20);
                 Console.Write("( 비 어 있 음 )");
-
-                Console.SetCursorPosition(119, 0);
-                Console.ReadKey();
             }
             else if(stage_Count >= 2)
             {
@@ -130,11 +150,8 @@ namespace WinterTop
                 Console.SetCursorPosition(130, 18);
                 Console.Write("< 스 킬 슬 롯 >");
                 Console.SetCursorPosition(129, 20);
-                Console.Write("{0}", skil_Name[1]);
+                Console.Write("{0}", user_Skilname[skil_Addcount]);
 
-
-                Console.SetCursorPosition(119, 0);
-                Console.ReadKey();
             }
         }
 
