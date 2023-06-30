@@ -27,14 +27,19 @@ namespace WinterTop
             int stage_Count = 0;
             int last_Stage = 8;
             int boss_Count = 0;
-            
+            int skil_Addcount = 0;
+
+            string cursor = "<==";
+            int cursor_X = 128;
+            int cursor_Y = 46;
+
             // 메인 반복 시작지점
 
             while (true)
             {
                 draw_Ui.Draw_Scene();
                 draw_Ui.main_info();
-
+                Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
 
                 Console.SetCursorPosition(145, 43);
                 Console.Write(" < 여 정 의 길 >");
@@ -66,27 +71,57 @@ namespace WinterTop
                 
                 ConsoleKeyInfo user_Input = Console.ReadKey();
 
-                if(user_Input.Key == ConsoleKey.I)      // 플레이어 정보창 열기
-                {
-                    player.Draw_Info_Window();
-                    player.Charactor_Info(ref player_Hp, ref player_Max_Hp, ref player_Atk,
-                        ref critical_Chance, ref evasion_Chance, ref stage_Count);
-                    draw_Ui.Draw_Player();
 
-                    Console.ReadKey();
-                }
-                else if(user_Input.Key == ConsoleKey.Escape)    // 게임 종료
+                // 메인화면 커서 이동, 메뉴키 입력 로직
+                switch(user_Input.Key)
                 {
-                    return;
+                    case ConsoleKey.I:
+                        player.Draw_Info_Window();
+                        player.Charactor_Info(ref player_Hp, ref player_Max_Hp, ref player_Atk,
+                            ref critical_Chance, ref evasion_Chance, ref stage_Count, ref skil_Addcount);
+                        draw_Ui.Draw_Player();
+
+                        Console.ReadKey();
+                        break;
+
+                    case ConsoleKey.Escape:
+                        return;
+
+                    case ConsoleKey.UpArrow:
+                        cursor_Y -= 3;
+
+                        if(cursor_Y <= 46)
+                        {
+                            cursor_Y = 46;
+                            continue;
+                        }
+
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        cursor_Y += 3;
+
+                        if(cursor_Y >= 52)
+                        {
+                            cursor_Y = 52;
+                            continue;
+                        }
+
+                        break;
+
                 }
-                else if(user_Input.Key == ConsoleKey.D1)    // 분기점 1 선택
+                // 메인화면 커서 이동, 메뉴키 입력 로직
+
+
+                // 커서 이동 후 분기점 선택 로직
+                if (cursor_Y == 46 && user_Input.Key == ConsoleKey.Enter)
                 {
                     random_Buff.Select_1(ref player_Atk, ref critical_Chance, ref evasion_Chance,
                         ref player_Max_Hp, ref player_Hp);      // 버프를 먼저 받고
 
                     battle.Play_Battle(ref player_Hp, ref player_Max_Hp, ref player_Atk, ref critical_damage,
-                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count);
-                                                                // 전투를 시작하게 된다.
+                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count, ref skil_Addcount);
+                    // 전투를 시작하게 된다.
                     if (player_Hp <= 0)
                     {
                         Console.SetCursorPosition(110, 25);
@@ -101,13 +136,13 @@ namespace WinterTop
                         Console.ReadKey();
                         return;
                     }
-                }
-                else if (user_Input.Key == ConsoleKey.D2)
+                }               
+                else if( cursor_Y == 49 && user_Input.Key == ConsoleKey.Enter)
                 {
                     random_Buff.Select_2(ref player_Hp, ref player_Atk, ref critical_Chance, ref evasion_Chance);
 
                     battle.Play_Battle(ref player_Hp, ref player_Max_Hp, ref player_Atk, ref critical_damage,
-                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count);
+                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count, ref skil_Addcount);
 
                     if (player_Hp <= 0)
                     {
@@ -124,12 +159,12 @@ namespace WinterTop
                         return;
                     }
                 }
-                else if (user_Input.Key == ConsoleKey.D3)
+                else if (cursor_Y == 52 && user_Input.Key == ConsoleKey.Enter)
                 {
                     random_Buff.Select_3(ref player_Hp, ref player_Max_Hp);
-                    
+
                     battle.Play_Battle(ref player_Hp, ref player_Max_Hp, ref player_Atk, ref critical_damage,
-                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count);
+                        ref critical_Chance, ref evasion_Chance, ref stage_Count, ref last_Stage, ref boss_Count, ref skil_Addcount);
 
                     if (player_Hp <= 0)
                     {
@@ -146,11 +181,19 @@ namespace WinterTop
                         return;
                     }
                 }
+                // 커서 이동 후 분기점 선택 로직
+
 
             }
-
             // 메인 반복 종료지점
-            
+
+
+        }
+
+        public void Draw_Cursor(ref string cursor, ref int x, ref int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(cursor);
         }
     }
 }

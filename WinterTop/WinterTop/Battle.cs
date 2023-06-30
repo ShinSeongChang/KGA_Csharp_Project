@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace WinterTop
 {
@@ -15,36 +16,30 @@ namespace WinterTop
         Random rand = new Random();
         PlayerInfo player = new PlayerInfo();
 
-        List<string> monster_Name = new List<string>();
-        List<double> monster_Hp = new List<double>();
-        List<double> monster_Max_Hp = new List<double>();
-        List<double> monster_Atk = new List<double>();
+        List<string> monster_Name;
+        List<double> monster_Hp;
+        List<double> monster_Max_Hp;
+        List<double> monster_Atk;
 
-        List<string> skillist_Name = new List<string>();        
-        List<int> skillist_Count = new List<int>();
-        List<int> skillist_MaxCount = new List<int>();
+        List<string> skillist_Name;        
+        List<int> skillist_Count;
+        List<int> skillist_MaxCount;
 
-        List<string> user_Skilname = new List<string>();
+        public List<string> user_Skilname = new List<string>();
         List<int> user_SkilCount = new List<int>();
         List<int> user_MaxSkilCount = new List<int>();
-        public void Play_Battle(ref double hp, ref double max_hp, ref double atk, ref double crit, ref int cri_chance, ref int evasion, 
-            ref int stage_Count, ref int last_stage, ref int boss_Count)
-        {
 
-            // 스킬 리스트 목록
-            skillist_Name.Add("스킬1");
-            skillist_Count.Add(5);
-            skillist_MaxCount.Add(5);
-            skillist_Name.Add("스킬2");
-            skillist_Count.Add(3);
-            skillist_MaxCount.Add(3);
-            skillist_Name.Add("스킬3");
-            skillist_Count.Add(1);
-            skillist_MaxCount.Add(1);
-            // 스킬 리스트 목록
+        public void Play_Battle(ref double hp, ref double max_hp, ref double atk, ref double crit, ref int cri_chance, ref int evasion, 
+            ref int stage_Count, ref int last_stage, ref int boss_Count, ref int skil_Addcount)
+        {
 
             // 몬스터 목록
             #region
+            monster_Name = new List<string>();
+            monster_Hp = new List<double>();
+            monster_Max_Hp = new List<double>();
+            monster_Atk = new List<double>();
+
             monster_Name.Add("좀비");
             monster_Hp.Add(Math.Truncate(max_hp * 1.1));
             monster_Max_Hp.Add(Math.Truncate(max_hp * 1.1));            
@@ -66,19 +61,44 @@ namespace WinterTop
             #endregion
             // 몬스터 목록
 
-            int skil_Addcount = 0;
+            // 스킬 리스트 목록
+            #region
+
+            skillist_Name = new List<string>();
+            skillist_Count = new List<int>();
+            skillist_MaxCount = new List<int>();
+            
+
+            skillist_Name.Add("비 어 있 음");
+            skillist_Name.Add("스킬1");
+            skillist_Count.Add(5);
+            skillist_MaxCount.Add(5);
+            skillist_Name.Add("스킬2");
+            skillist_Count.Add(3);
+            skillist_MaxCount.Add(3);
+            skillist_Name.Add("스킬3");
+            skillist_Count.Add(1);
+            skillist_MaxCount.Add(1);
+            #endregion
+            // 스킬 리스트 목록
+
+            if (stage_Count == 2)
+            {
+                user_Skilname.Remove(user_Skilname[0]);
+            }
 
             // 스테이지 2단계 진행시마다 유저는 순차적으로 스킬을 획득
-            if(stage_Count % 2 == 0)
+            if (stage_Count % 2 == 0 && skil_Addcount <=3)
             {
                 user_Skilname.Add(skillist_Name[skil_Addcount]);
-                user_SkilCount.Add(skillist_Count[skil_Addcount]);
-                user_MaxSkilCount.Add(skillist_MaxCount[skil_Addcount]);
+                //user_SkilCount.Add(skillist_Count[skil_Addcount]);
+                //user_MaxSkilCount.Add(skillist_MaxCount[skil_Addcount]);
 
-                skil_Addcount++;
+                skil_Addcount++;                
             }
-            // 스테이지 2단계 진행시마다 유저는 순차적으로 스킬을 획득
 
+            // 스테이지 2단계 도달시 0번 비어있음을 지움
+           
 
             int random_Monster = rand.Next(0, 3);   
             
@@ -92,6 +112,8 @@ namespace WinterTop
             string cursor = "<==";
             int cursor_X = 80;
             int cursor_Y = 54;
+            int skilcursor_X = 76;
+            int skilcursor_Y = 51;
 
             // 보스 몬스터 조우
             #region
@@ -103,7 +125,7 @@ namespace WinterTop
                     int random_evasion = rand.Next(0, 100);
 
                     // 배틀 탈출조건
-                    if (hp <= 0)                                          // 플레이어 사망시
+                    if (hp <= 0)                       // 플레이어 사망시
                     {
                         draw_Ui.Draw_Scene();
                         Console.SetCursorPosition(110, 25);
@@ -114,7 +136,7 @@ namespace WinterTop
                         break;
 
                     }
-                    else if (monster_Hp[3] <= 0)       // 몬스터 사망시
+                    else if (monster_Hp[random_Monster] <= 0)       // 몬스터 사망시
                     {
                         draw_Ui.Draw_Scene();
                         Console.SetCursorPosition(110, 25);
@@ -135,6 +157,8 @@ namespace WinterTop
                         Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
                         Draw_BattleInfo(ref hp, ref max_hp, ref atk, ref random_Monster);
 
+
+
                         ConsoleKeyInfo user_Input = Console.ReadKey();
 
                         switch (user_Input.Key)
@@ -145,7 +169,7 @@ namespace WinterTop
 
                             case ConsoleKey.I:
                                 player.Draw_Info_Window();
-                                player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count, ref skil_Addcount);
                                 draw_Ui.Draw_Player();
                                 Console.ReadKey();
 
@@ -188,14 +212,14 @@ namespace WinterTop
                             Attack_Monster(ref random_Monster, ref atk, ref hp, ref max_hp);
                             battle_count++;
                         }
-                        else if (cursor_Y == 56 && user_Input.Key == ConsoleKey.Enter)   // 스킬을 선택시
+                        else if (cursor_Y == 55 && user_Input.Key == ConsoleKey.Enter)   // 스킬을 선택시
                         {
 
                             while (true)     // 스킬창 목록에 가두기
                             {
                                 Draw_SkilWindow();
                                 Draw_SkilInfo();
-                                Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
+                                Draw_Skilcursor(ref cursor, ref skilcursor_X, ref skilcursor_Y);
 
                                 user_Input = Console.ReadKey();
 
@@ -207,43 +231,64 @@ namespace WinterTop
 
                                     case ConsoleKey.I:
                                         player.Draw_Info_Window();
-                                        player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
-                                        //draw_Ui.Draw_Player();
+                                        player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count, ref skil_Addcount);
+                                        draw_Ui.Draw_Player();
                                         Console.ReadKey();
 
-                                        break;
+                                        continue;
                                     case ConsoleKey.UpArrow:
-                                        cursor_Y--;
+                                        skilcursor_Y--;
 
-                                        if (cursor_Y <= 54)
+                                        if (skilcursor_Y <= 51)
                                         {
-                                            cursor_Y = 54;
+                                            skilcursor_Y = 51;
                                         }
 
-                                        break;
+                                        continue;
                                     case ConsoleKey.DownArrow:
-                                        cursor_Y++;
+                                        skilcursor_Y++;
 
-                                        if (cursor_Y >= 56)
+                                        if (skilcursor_Y >= 54)
                                         {
-                                            cursor_Y = 56;
+                                            skilcursor_Y = 54;
                                         }
 
-                                        break;
+                                        continue;
                                 }
 
-
-                                if (true)    // 스킬 확정시, break로 스킬창 목록을 나간다.
+                                if (skilcursor_Y == 51 && user_Input.Key == ConsoleKey.Enter)    // 스킬 확정시, break로 스킬창 목록을 나간다.
                                 {
-                                    break;
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 1");
+
+                                    Console.ReadKey();
+                                    break;      // 1번 스킬
                                 }
+                                else if (skilcursor_Y == 52 && user_Input.Key == ConsoleKey.Enter)
+                                {
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 2");
+                                    Console.ReadKey();
+                                    break;      // 2번 스킬
+                                }
+                                else if (skilcursor_Y == 53 && user_Input.Key == ConsoleKey.Enter)
+                                {
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 3");
 
-
+                                    Console.ReadKey();
+                                    break;      // 3번 스킬
+                                }
+                                else if (skilcursor_Y == 54 && user_Input.Key == ConsoleKey.Enter)   // 스킬창 나가기 선택시
+                                {
+                                    break;      // 스킬창 나가기
+                                }
                             }
 
-                            battle_count++;
-                            Console.ReadKey();
-
+                        }
+                        else if (cursor_Y == 56 && user_Input.Key == ConsoleKey.Enter)       // 도망가기 선택시
+                        {
+                            return;
                         }
 
                     }
@@ -275,7 +320,6 @@ namespace WinterTop
             #endregion
             // 보스 몬스터 조우
 
-
             // 일반 몬스터 조우
             #region
             else
@@ -293,9 +337,7 @@ namespace WinterTop
                         Console.WriteLine("전투 패배");
                         Console.ReadLine();
 
-                        hp = 0;
                         break;
-
                     }
                     else if (monster_Hp[random_Monster] <= 0)
                     {
@@ -304,6 +346,10 @@ namespace WinterTop
                         Console.WriteLine("전투 승리");
                         Console.ReadLine();
 
+                        //// 몬스터 정보 리스트가 필드에 선언되었기 때문에 함수가 끝나도 리스트안에 정보가 남아있음.
+                        //// 즉, 처치한 기록이 있는 몬스터를 재 조우시 체력이 이미 0이하인 상태라 전투 돌입하자마자 승리로 끝나는 상황발생.
+
+                        //monster_Hp[random_Monster] = monster_Max_Hp[random_Monster]; // 몬스터 처치후 승리조건 달성하면 몬스터 체력을 리셋시켜주는 코드 추가
                         stage_Count++;
                         break;
                     }
@@ -336,13 +382,9 @@ namespace WinterTop
                         ConsoleKeyInfo user_Input = Console.ReadKey();
                         switch (user_Input.Key)
                         {
-
-                            case ConsoleKey.Escape:
-                                return;
-
                             case ConsoleKey.I:
                                 player.Draw_Info_Window();
-                                player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count, ref skil_Addcount);
                                 draw_Ui.Draw_Player();
                                 Console.ReadKey();
 
@@ -387,65 +429,88 @@ namespace WinterTop
                             Attack_Monster(ref random_Monster, ref atk, ref hp, ref max_hp);
                             battle_count++;
                         }
-                        else if(cursor_Y == 56 && user_Input.Key == ConsoleKey.Enter)   // 스킬을 선택시
+                        else if(cursor_Y == 55 && user_Input.Key == ConsoleKey.Enter)   // 스킬을 선택시
                         {
                             
                             while(true)     // 스킬창 목록에 가두기
                             {
                                 Draw_SkilWindow();
                                 Draw_SkilInfo();
-                                Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
+                                Draw_Skilcursor(ref cursor, ref skilcursor_X, ref skilcursor_Y);
 
                                 user_Input = Console.ReadKey();
 
                                 switch (user_Input.Key)
                                 {
-
-                                    case ConsoleKey.Escape:
-                                        return;
-
                                     case ConsoleKey.I:
                                         player.Draw_Info_Window();
-                                        player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count);
+                                        player.Charactor_Info(ref hp, ref max_hp, ref atk, ref cri_chance, ref evasion, ref stage_Count, ref skil_Addcount);
                                         draw_Ui.Draw_Player();
                                         Console.ReadKey();
 
-                                        break;
+                                        continue;
                                     case ConsoleKey.UpArrow:
-                                        cursor_Y--;
+                                        skilcursor_Y--;
 
-                                        if (cursor_Y <= 54)
+                                        if (skilcursor_Y <= 51)
                                         {
-                                            cursor_Y = 54;
+                                            skilcursor_Y = 51;
+                                        }
+                                        else if(skilcursor_Y == 55)
+                                        {
+                                            skilcursor_Y = 54;
                                         }
 
-                                        break;
+                                        continue;
                                     case ConsoleKey.DownArrow:
-                                        cursor_Y++;
+                                        skilcursor_Y++;
 
-                                        if (cursor_Y >= 56)
+                                        if (skilcursor_Y >= 54)
                                         {
-                                            cursor_Y = 56;
+                                            skilcursor_Y = 56;
                                         }
 
-                                        break;
+                                        continue;
                                 }
 
-
-                                if(true)    // 스킬 확정시, break로 스킬창 목록을 나간다.
+                                if(skilcursor_Y == 51 && user_Input.Key == ConsoleKey.Enter)    // 스킬 확정시, break로 스킬창 목록을 나간다.
                                 {
-                                    break;
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 1");
+                                    
+                                    Console.ReadKey();
+                                    break;      // 1번 스킬
                                 }
+                                else if (skilcursor_Y == 52 && user_Input.Key == ConsoleKey.Enter)    
+                                {
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 2");
+                                    Console.ReadKey();
+                                    break;      // 2번 스킬
+                                }
+                                else if (skilcursor_Y == 53 && user_Input.Key == ConsoleKey.Enter)  
+                                {
+                                    Console.SetCursorPosition(100, 35);
+                                    Console.Write("테스트 3");
 
-                                
+                                    Console.ReadKey();
+                                    break;      // 3번 스킬
+                                }
+                                else if (skilcursor_Y == 56 && user_Input.Key == ConsoleKey.Enter)   // 스킬창 나가기 선택시
+                                {
+                                    break;      // 스킬창 나가기
+                                }
                             }
-
-                            battle_count++;
-                            Console.ReadKey();
+                           
+                        }
+                        else if (cursor_Y == 56 && user_Input.Key == ConsoleKey.Enter)       // 도망가기 선택시
+                        {
+                            return;
                         }
 
                     }
                     // 유저가 공격하는 턴
+
 
                     // 몬스터가 공격하는 턴
                     else
@@ -462,7 +527,6 @@ namespace WinterTop
                     // 몬스터가 공격하는 턴
 
                 }
-
 
             }                            
             #endregion
@@ -494,6 +558,12 @@ namespace WinterTop
             Console.Write(cursor);
         }
 
+        public void Draw_Skilcursor(ref string cursor, ref int x, ref int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(cursor);
+        }
+
         public void Draw_BattleInfo(ref double hp, ref double max_hp, ref double atk, ref int random_Monster)
         {
             Console.SetCursorPosition(142, 4);
@@ -510,8 +580,10 @@ namespace WinterTop
             Console.Write("플레이어 공격력 :    {0}", atk);
             Console.SetCursorPosition(63, 54);
             Console.Write("공격");
-            Console.SetCursorPosition(63, 56);
+            Console.SetCursorPosition(63, 55);
             Console.Write("스킬");
+            Console.SetCursorPosition(63, 56);
+            Console.Write("도망가기");
         }
 
         public void Draw_SkilWindow()
@@ -543,18 +615,20 @@ namespace WinterTop
 
         public void Draw_SkilInfo()
         {
-            int y = 49;
+            int y = 51;
 
             Console.SetCursorPosition(61, 49);
             Console.Write("< 스 킬 목 록 >");
 
             foreach(var skil in user_Skilname)
             {
-                y += 2;
                 Console.SetCursorPosition(61, y);
                 Console.Write("{0}", skil);
+                y++;
             }
-           
+
+            Console.SetCursorPosition(61, 56);
+            Console.Write(" 나 가 기");
         }
 
     }

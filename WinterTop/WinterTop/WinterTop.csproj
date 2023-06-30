@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battle.cs" />
+    <Compile Include="Save.cs" />
     <Compile Include="PlayerInfo.cs" />
     <Compile Include="MainPlay.cs" />
     <Compile Include="Program.cs" />
