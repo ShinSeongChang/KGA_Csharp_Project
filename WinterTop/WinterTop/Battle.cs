@@ -57,7 +57,7 @@ namespace WinterTop
             monster_Name.Add("z리치킹z");
             monster_Hp.Add(Math.Truncate(max_hp*2));
             monster_Max_Hp.Add(Math.Truncate(max_hp*2));
-            monster_Atk.Add(Math.Truncate(atk*1.5));
+            monster_Atk.Add(Math.Truncate(atk*0.8));
             #endregion
             // 몬스터 목록
 
@@ -154,6 +154,8 @@ namespace WinterTop
                     {
                         draw_Ui.Draw_Scene();
                         draw_Ui.Draw_InfoWindow();
+                        draw_Ui.Draw_LichKing();
+                        draw_Ui.Draw_BattlePlyaer();
                         Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
                         Draw_BattleInfo(ref hp, ref max_hp, ref atk, ref random_Monster);
 
@@ -346,10 +348,6 @@ namespace WinterTop
                         Console.WriteLine("전투 승리");
                         Console.ReadLine();
 
-                        //// 몬스터 정보 리스트가 필드에 선언되었기 때문에 함수가 끝나도 리스트안에 정보가 남아있음.
-                        //// 즉, 처치한 기록이 있는 몬스터를 재 조우시 체력이 이미 0이하인 상태라 전투 돌입하자마자 승리로 끝나는 상황발생.
-
-                        //monster_Hp[random_Monster] = monster_Max_Hp[random_Monster]; // 몬스터 처치후 승리조건 달성하면 몬스터 체력을 리셋시켜주는 코드 추가
                         stage_Count++;
                         break;
                     }
@@ -360,20 +358,20 @@ namespace WinterTop
                     {
                         draw_Ui.Draw_Scene();
                         draw_Ui.Draw_InfoWindow();
-                        //draw_Ui.Draw_BattlePlyaer();
+                        draw_Ui.Draw_BattlePlyaer();
 
-                        //if (random_Monster == 0)
-                        //{
-                        //    draw_Ui.Draw_Zombie();
-                        //}
-                        //else if (random_Monster == 1)
-                        //{
-                        //    draw_Ui.Draw_Skeleton();
-                        //}
-                        //else if (random_Monster == 2)
-                        //{
-                        //    draw_Ui.Draw_Fanatic();
-                        //}
+                        if (random_Monster == 0)
+                        {
+                            draw_Ui.Draw_Zombie();
+                        }
+                        else if (random_Monster == 1)
+                        {
+                            draw_Ui.Draw_Skeleton();
+                        }
+                        else if (random_Monster == 2)
+                        {
+                            draw_Ui.Draw_Fanatic();
+                        }
 
                         Draw_Cursor(ref cursor, ref cursor_X, ref cursor_Y);
                         Draw_BattleInfo(ref hp, ref max_hp, ref atk, ref random_Monster);

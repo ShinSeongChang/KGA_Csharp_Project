@@ -17,15 +17,15 @@ namespace WinterTop
             Console.SetCursorPosition(75, 3);
             Console.WriteLine("┌───────────────────────────────────────────────────────────────────────────┐");
             Console.SetCursorPosition(75, 4);
-            Console.WriteLine("│  ┌──────────────────────────────────────────┐                             │");
+            Console.WriteLine("│  ┌─────────────────────────────────────────────────────────────────────┐  │");
             Console.SetCursorPosition(75, 5);
-            Console.WriteLine("│  │                                          │                             │");
+            Console.WriteLine("│  │                                                                     │  │");
             Console.SetCursorPosition(75, 6);
-            Console.WriteLine("│  │                                          │                             │");
+            Console.WriteLine("│  └─────────────────────────────────────────────────────────────────────┘  │");
             Console.SetCursorPosition(75, 7);
-            Console.WriteLine("│  │                                          │                             │");
+            Console.WriteLine("│                                                                           │");
             Console.SetCursorPosition(75, 8);
-            Console.WriteLine("│  │                                          │                             │");
+            Console.WriteLine("│  ┌──────────────────────────────────────────┐                             │");
             Console.SetCursorPosition(75, 9);
             Console.WriteLine("│  │                                          │                             │");
             Console.SetCursorPosition(75, 10);
@@ -92,23 +92,26 @@ namespace WinterTop
 
             if(stage_Count >= 6)
             {
-                Console.SetCursorPosition(130, 5);
+                Console.SetCursorPosition(110, 5);
+                Console.Write(" <  정   보   창  >");
+
+                Console.SetCursorPosition(130, 10);
                 Console.Write(" < 능 력 치 >");
-                Console.SetCursorPosition(125, 8);
-                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-                Console.SetCursorPosition(125, 10);
-                Console.Write(" 공격력 : {0}", atk);
                 Console.SetCursorPosition(125, 12);
-                Console.Write(" 회피율 : {0} %", evasion);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
                 Console.SetCursorPosition(125, 14);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 16);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 18);
                 Console.Write(" 크리티컬 확률 : {0} % ", cri);
-                Console.SetCursorPosition(130, 18);
-                Console.Write("< 스 킬 슬 롯 >");
-                Console.SetCursorPosition(130, 20);
-                Console.Write(" 스 킬 1");
-                Console.SetCursorPosition(130, 21);
-                Console.Write(" 스 킬 2");
                 Console.SetCursorPosition(130, 22);
+                Console.Write("< 스 킬 슬 롯 >");
+                Console.SetCursorPosition(130, 24);
+                Console.Write(" 스 킬 1");
+                Console.SetCursorPosition(130, 26);
+                Console.Write(" 스 킬 2");
+                Console.SetCursorPosition(130, 28);
                 Console.Write(" 스 킬 3");
 
                 
@@ -116,58 +119,68 @@ namespace WinterTop
             }
             else if (stage_Count >= 4)
             {
-                Console.SetCursorPosition(130, 5);
+                Console.SetCursorPosition(110, 5);
+                Console.Write(" <  정   보   창  >");
+
+                Console.SetCursorPosition(130, 10);
                 Console.Write(" < 능 력 치 >");
-                Console.SetCursorPosition(125, 8);
-                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-                Console.SetCursorPosition(125, 10);
-                Console.Write(" 공격력 : {0}", atk);
                 Console.SetCursorPosition(125, 12);
-                Console.Write(" 회피율 : {0} %", evasion);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
                 Console.SetCursorPosition(125, 14);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 16);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 18);
                 Console.Write(" 크리티컬 확률 : {0} % ", cri);
-                Console.SetCursorPosition(130, 18);
+                Console.SetCursorPosition(130, 22);
                 Console.Write("< 스 킬 슬 롯 >");
-                Console.SetCursorPosition(130, 20);
+                Console.SetCursorPosition(130, 24);
                 Console.Write(" 스 킬 1");
-                Console.SetCursorPosition(130, 21);
+                Console.SetCursorPosition(130, 26);
                 Console.Write(" 스 킬 2");
 
             }
             else if (stage_Count >= 2)
             {
-                Console.SetCursorPosition(130, 5);
+                Console.SetCursorPosition(110, 5);
+                Console.Write(" <  정   보   창  >");
+
+                Console.SetCursorPosition(130, 10);
                 Console.Write(" < 능 력 치 >");
-                Console.SetCursorPosition(125, 8);
-                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-                Console.SetCursorPosition(125, 10);
-                Console.Write(" 공격력 : {0}", atk);
                 Console.SetCursorPosition(125, 12);
-                Console.Write(" 회피율 : {0} %", evasion);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
                 Console.SetCursorPosition(125, 14);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 16);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 18);
                 Console.Write(" 크리티컬 확률 : {0} % ", cri);
-                Console.SetCursorPosition(130, 18);
+                Console.SetCursorPosition(130, 22);
                 Console.Write("< 스 킬 슬 롯 >");
-                Console.SetCursorPosition(130, 20);
+                Console.SetCursorPosition(130, 24);
                 Console.Write(" 스 킬 1");
 
             }
             else //if(stage_Count <2)
             {
-                Console.SetCursorPosition(130, 5);
+                Console.SetCursorPosition(105, 5);
+                Console.Write(" <  정   보   창  >");
+
+                Console.SetCursorPosition(130, 10);
                 Console.Write(" < 능 력 치 >");
-                Console.SetCursorPosition(125, 8);
-                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
-                Console.SetCursorPosition(125, 10);
-                Console.Write(" 공격력 : {0}", atk);
                 Console.SetCursorPosition(125, 12);
-                Console.Write(" 회피율 : {0} %", evasion);
+                Console.Write(" 체력   : {0} / {1}", hp, max_hp);
                 Console.SetCursorPosition(125, 14);
+                Console.Write(" 공격력 : {0}", atk);
+                Console.SetCursorPosition(125, 16);
+                Console.Write(" 회피율 : {0} %", evasion);
+                Console.SetCursorPosition(125, 18);
                 Console.Write(" 크리티컬 확률 : {0} % ", cri);
-                Console.SetCursorPosition(130, 18);
+                Console.SetCursorPosition(130, 22);
                 Console.Write("< 스 킬 슬 롯 >");
-                Console.SetCursorPosition(130, 20);
-                Console.Write(" (비 어 있 음)");
+                Console.SetCursorPosition(130, 24);
+                Console.Write("( 비 어 있 음 )");
+
 
             }
 

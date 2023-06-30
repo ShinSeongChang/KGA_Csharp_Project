@@ -10,11 +10,13 @@ namespace WinterTop
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+            Console.OutputEncoding = Encoding.UTF8;
             Console.SetWindowSize(240, 62);
 
             Scene draw_Ui = new Scene();
 
-            //draw_Ui.Darw_Background();
+            draw_Ui.Darw_Background();
             draw_Ui.Draw_Scene();            
             draw_Ui.Draw_Title();
 

@@ -17,7 +17,7 @@ namespace WinterTop
         {
             double player_Hp = 150;
             double player_Max_Hp = 150;
-            double player_Atk = 500;
+            double player_Atk = 20;
             double critical_damage = player_Atk * 1.5;
             int critical_Chance = 5;
             int evasion_Chance = 3;
