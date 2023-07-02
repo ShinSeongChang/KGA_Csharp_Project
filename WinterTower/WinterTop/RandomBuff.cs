@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinterTop
+namespace WinterTower
 {
     public class RandomBuff
     {
@@ -17,6 +17,7 @@ namespace WinterTop
         {
             draw_Ui.Draw_Scene();
             draw_Ui.main_info();
+            draw_Ui.Draw_Weapons();
             double random_Atk = random.NextDouble();
             int random_Cri = random.Next(0, 4);             // 크리티컬 증가량 0 ~ 3 %
             int random_Evasion = random.Next(0, 3);         // 회피율 증가량 0 ~ 2 %
@@ -92,6 +93,7 @@ namespace WinterTop
         {
             draw_Ui.Draw_Scene();
             draw_Ui.main_info();
+            draw_Ui.Draw_Traning();
 
             double random_Hp = random.NextDouble();
             double random_Atk = random.NextDouble();
@@ -164,7 +166,7 @@ namespace WinterTop
         {
             draw_Ui.Draw_Scene();
             draw_Ui.main_info();
-            //draw_Ui.Draw_Heal();
+            draw_Ui.Draw_Heal();
 
             double random_Hp = random.NextDouble();
 

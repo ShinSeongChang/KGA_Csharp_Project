@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinterTop", "WinterTop\WinterTop.csproj", "{F9BC8F77-B52F-4C5A-B6EB-8C866270E07A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinterTower", "WinterTop\WinterTower.csproj", "{F9BC8F77-B52F-4C5A-B6EB-8C866270E07A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

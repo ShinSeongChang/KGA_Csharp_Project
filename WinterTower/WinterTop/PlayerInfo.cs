@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinterTop
+namespace WinterTower
 {
 
     public class PlayerInfo
@@ -92,7 +92,7 @@ namespace WinterTop
 
             if(stage_Count >= 6)
             {
-                Console.SetCursorPosition(110, 5);
+                Console.SetCursorPosition(105, 5);
                 Console.Write(" <  정   보   창  >");
 
                 Console.SetCursorPosition(130, 10);
@@ -119,7 +119,7 @@ namespace WinterTop
             }
             else if (stage_Count >= 4)
             {
-                Console.SetCursorPosition(110, 5);
+                Console.SetCursorPosition(105, 5);
                 Console.Write(" <  정   보   창  >");
 
                 Console.SetCursorPosition(130, 10);
@@ -142,7 +142,7 @@ namespace WinterTop
             }
             else if (stage_Count >= 2)
             {
-                Console.SetCursorPosition(110, 5);
+                Console.SetCursorPosition(105, 5);
                 Console.Write(" <  정   보   창  >");
 
                 Console.SetCursorPosition(130, 10);
