@@ -1,5 +1,5 @@
 # [경일게임아카데미 메타플밍 3기 신성창]
-## C++ Console Game Project
+## C# Console Game Project
 ***
 - 개요 : C# 기초프로그래밍을 통한 콘솔게임 제작 및 사전기획서 작성, 일정관리등 실무 프로세스 경험
 
