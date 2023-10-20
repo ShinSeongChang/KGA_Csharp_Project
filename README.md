@@ -7,6 +7,4 @@
 
 - 작업기간 : 2023.6.26 ~ 2023.6.30 (워킹데이 5일, 1주)
 
-- Reference Game : 겨울의 탑
-  
-   Link : (https://play.google.com/store/search?q=%EA%B2%A8%EC%9A%B8%EC%9D%98%20%ED%83%91&c=apps&hl=ko-KR)
+- Reference Game : [겨울의 탑](https://play.google.com/store/search?q=%EA%B2%A8%EC%9A%B8%EC%9D%98%20%ED%83%91&c=apps&hl=ko-KR)
